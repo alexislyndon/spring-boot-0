@@ -1,14 +1,18 @@
 package com.example.springbootdocker.model.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+// import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity(name = "people")
 public class PersonEntity {
@@ -23,9 +27,13 @@ public class PersonEntity {
     @Column(nullable = false)
     private String lastname;
 
-    @OneToMany(mappedBy = "person", cascade = {CascadeType.ALL}, orphanRemoval = true)
-    private List<EmailAddressEntity> emailaddresses;
+    @OneToMany(mappedBy = "person", cascade = { CascadeType.ALL }, orphanRemoval = true)
+    // @JsonManagedReference
+    private List<EmailAddressEntity> emailaddresses; // = new ArrayList<>();
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getId() {
         return id;
@@ -45,10 +53,6 @@ public class PersonEntity {
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public List<EmailAddressEntity> getEmailaddresses() {

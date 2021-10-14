@@ -1,21 +1,29 @@
 package com.example.springbootdocker.model.dto;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 public class PersonDto {
+    
+    private Long id;
+    private String firstname;
+    private String lastname;
 
-
+    @JsonSerialize(converter = ListEmailAddressDtoConverter.class)
+    private List<EmailAddressDto> emailaddresses;
+    
     public PersonDto() {
         super();
     }
 
-    public PersonDto(String firstname, String lastname, List<EmailAddressDto> emailaddresses) {
-        super();
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.emailaddresses = emailaddresses;
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public PersonDto(String firstname, String lastname) {
@@ -25,6 +33,7 @@ public class PersonDto {
 
     }
 
+
     public List<EmailAddressDto> getEmailaddresses() {
         return emailaddresses;
     }
@@ -32,10 +41,6 @@ public class PersonDto {
     public void setEmailaddresses(List<EmailAddressDto> emailaddresses) {
         this.emailaddresses = emailaddresses;
     }
-
-    private String firstname;
-    private String lastname;
-    private List<EmailAddressDto> emailaddresses = new ArrayList<>();
 
     public String getFirstname() {
         return firstname;

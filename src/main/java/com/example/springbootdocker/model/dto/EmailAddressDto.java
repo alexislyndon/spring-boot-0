@@ -2,21 +2,21 @@ package com.example.springbootdocker.model.dto;
 
 public class EmailAddressDto {
 
-    private Long id;
+    // private Long id;
     private String emailaddress;
-    private PersonDto person;
+    // private Long personId;
 
-    public Long getId() {
-        return id;
-    }
+    // public Long getId() {
+    //     return id;
+    // }
 
-    public PersonDto getPerson() {
-        return person;
-    }
+    // public Long getPersonId() {
+    //     return personId;
+    // }
 
-    public void setPerson(PersonDto person) {
-        this.person = person;
-    }
+    // public void setPersonId(Long personId) {
+    //     this.personId = personId;
+    // }
 
     public String getEmailaddress() {
         return emailaddress;
@@ -26,7 +26,7 @@ public class EmailAddressDto {
         this.emailaddress = emailaddress;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    // public void setId(Long id) {
+    //     this.id = id;
+    // }
 }
