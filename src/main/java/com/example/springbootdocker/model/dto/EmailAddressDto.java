@@ -1,8 +1,11 @@
 package com.example.springbootdocker.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public class EmailAddressDto {
 
     // private Long id;
+    @JsonValue
     private String emailaddress;
     // private Long personId;
 

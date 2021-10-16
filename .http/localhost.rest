@@ -1,13 +1,60 @@
-http://localhost:3000/
+
+http://localhost:3001/contacts
 
 ###
 
-http://localhost:3000/contacts
+http://localhost:3001/contacts/7
 
 ###
 
-http://localhost:3000/contact/1
+http://localhost:3001/contacts/1
 
 ###
 
-http://localhost:3000/contact/2
+http://localhost:3001/contacts/62623639-6638-6164-2d32-6531362d3131
+
+###
+
+POST http://localhost:3001/contacts
+Content-Type: application/json
+
+{
+    "firstname": "2Alexis Lyndon FN",
+    "lastname": "2Galaura LN",
+    "emailaddresses": [
+        "1@gmail.com",
+        "2@gg.io"
+    ],
+    "postaladdresses": [
+        {
+            "street": "2some street st.",
+            "city": "2cdoc",
+            "zipcode": "29000"
+        },
+        {
+            "street": "2pabayo",
+            "city": "2cagayan de oro city",
+            "zipcode": "29000"
+        }
+    ]
+}
+
+###
+
+POST http://localhost:3001/contacts
+Content-Type: application/json
+
+{
+  "firstname": "TEST",
+  "lastname": "TESTTEST",
+  "emailaddresses": [
+    "test@kids.io"
+  ],
+  "postaladdresses": [
+    {
+      "street": "123",
+      "city": "MMMMM",
+      "zipcode": "100111111"
+    }
+  ]
+}
